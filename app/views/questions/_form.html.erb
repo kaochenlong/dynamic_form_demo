@@ -1,0 +1,11 @@
+<%= simple_form_for(@question) do |f| %>
+
+  <%= f.input :title, label: false, placeholder:'題目' %>
+  <%= f.input :subtitle, label: false, placeholder:'說明' %>
+
+  <%= f.simple_fields_for :answers do |answer| %>
+    <%= answer.input :content, label: false, placeholder:'內容' %>
+  <% end %>
+
+  <%= f.button :submit %>
+<% end %>
