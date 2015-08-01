@@ -4,8 +4,11 @@
   <%= f.input :subtitle, label: false, placeholder:'說明' %>
 
   <%= f.simple_fields_for :answers do |answer| %>
-    <%= answer.input :content, label: false, placeholder:'內容' %>
+    <%= render 'answer_fields', f: answer %>
   <% end %>
 
-  <%= f.button :submit %>
+  <div class="links">
+    <%= link_to_add_association '新增題目', f, :answers, class:'btn btn-primary' %>
+    <%= f.button :submit %>
+  </div>
 <% end %>
